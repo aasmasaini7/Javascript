@@ -14,3 +14,10 @@ document.getElementById("getWeather").addEventListener("click", function () {
             }
             return response.json();
         })
+    .then((data) => {
+            const { name, main, weather } = data;
+            const output = `
+                <h2>Weather in ${name}</h2>
+                <p><strong>Temperature:</strong> ${main.temp}°C</p>
+                <p><strong>Condition:</strong> ${weather[0].description}</p>
+            `;
