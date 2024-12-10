@@ -7,3 +7,10 @@ document.getElementById("getWeather").addEventListener("click", function () {
         document.getElementById("output").innerHTML = "<p>Please enter a city name.</p>";
         return;
     }
+    fetch(apiUrl)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("City not found");
+            }
+            return response.json();
+        })
