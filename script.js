@@ -21,3 +21,9 @@ document.getElementById("getWeather").addEventListener("click", function () {
                 <p><strong>Temperature:</strong> ${main.temp}°C</p>
                 <p><strong>Condition:</strong> ${weather[0].description}</p>
             `;
+        document.getElementById("output").innerHTML = output;
+        })
+        .catch((error) => {
+            document.getElementById("output").innerHTML = `<p>Error: ${error.message}</p>`;
+        });
+});
